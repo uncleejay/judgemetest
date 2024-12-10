@@ -1,0 +1,22 @@
+{
+  "name": "judgemetest",
+  "version": "1.0.0",
+  "description": "Judge.Me Test Automation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uncleejay/judgemetest.git"
+  },
+  "author": "Joseph Cole-Showers",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/uncleejay/judgemetest/issues"
+  },
+  "homepage": "https://github.com/uncleejay/judgemetest#readme",
+  "devDependencies": {
+    "cypress": "^13.16.1"
+  }
+}
