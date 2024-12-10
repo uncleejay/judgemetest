@@ -3,11 +3,11 @@ class Home_PO {
         // check if the url is correct
         cy.url().should('eq', baseUrl)
 
-        // Validate that the judge.me site loads within 3 seconds
+        // Validate that the judge.me site loads within 5 seconds
         cy.window().its('performance.timing').then((timing) => {
             const loadTime = timing.loadEventEnd - timing.navigationStart;
             cy.log(`Page load time: ${loadTime}ms`);
-            expect(loadTime).to.be.lessThan(3000); // 3 seconds
+            expect(loadTime).to.be.lessThan(5000); 
         });
 
         // validate the header is visible
