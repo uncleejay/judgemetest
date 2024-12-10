@@ -1,5 +1,6 @@
 import Home_PO from "../support/pageObjects/Home_PO";
 import Search_PO from "../support/pageObjects/Search_PO";
+import 'cypress-axe'
 
 describe('Judge.Me Site', () => {
 
@@ -9,6 +10,7 @@ describe('Judge.Me Site', () => {
     beforeEach(() => {
       // visit the judge.me site before each test
       cy.visit(baseUrl);
+      cy.injectAxe();
     });
 
     // Verify Page Load
@@ -17,9 +19,14 @@ describe('Judge.Me Site', () => {
         home_po.verifyPageLoad(baseUrl)
     });
 
+    it('should have no accessibility violations', () => {
+        cy.checkA11y();
+    });
+
     // Validate Search Functionality
     it('should display correct results when searching by keyword', () => {
         search_po.verifySearchFunctionality();
+        cy.checkA11y()
     });
 
     // Validate Search Handles result when keyword is not found
