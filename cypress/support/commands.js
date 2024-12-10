@@ -23,6 +23,7 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+import '@cypress-audit/lighthouse/commands';
 
 Cypress.Commands.add('performSearch', (keyword) => {
     // Enter a keyword in the search bar and press Enter

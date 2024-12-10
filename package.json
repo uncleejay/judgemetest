@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/uncleejay/judgemetest#readme",
   "devDependencies": {
-    "cypress": "^13.16.1"
+    "@cypress-audit/lighthouse": "^1.4.2",
+    "cypress": "^13.16.1",
+    "cypress-axe": "^1.5.0"
   }
 }
