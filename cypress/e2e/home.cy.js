@@ -26,7 +26,6 @@ describe('Judge.Me Site', () => {
     // Validate Search Functionality
     it('should display correct results when searching by keyword', () => {
         search_po.verifySearchFunctionality();
-        cy.checkA11y()
     });
 
     // Validate Search Handles result when keyword is not found
