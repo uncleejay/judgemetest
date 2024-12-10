@@ -47,4 +47,18 @@ describe('Judge.Me Site', () => {
     it('should validate currency filter to select EUR', () => {
         search_po.validateCurrencyFilter()
     })
+
+    it('should run lighthouse performance audit', () => {
+        const thresholds = {
+            performance: 50,
+            accessibility: 75,
+            seo: 60,
+            pwa: 50,
+            };
+        const lighthouseConfig = {
+            formFactor: 'desktop',
+            screenEmulation: { disabled: true },
+        };
+        cy.lighthouse(thresholds, lighthouseConfig);
+    });
 });
