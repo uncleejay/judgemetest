@@ -1,28 +1,27 @@
+const searchKeyword = 'tablet';
+const nonSearchKeyword = 'm1hs2';
 class Search_PO {
-    static searchKeyword = 'tablet';
-    static nonSearchKeyword = 'm1hs2';
-    
     verifySearchFunctionality() {
         // Use the custom command for searching
-        cy.performSearch(Search_PO.searchKeyword);
+        cy.performSearch(searchKeyword);
 
         // Verify that the results match the search keyword
         cy.get('.search-results__list')
         .each(($review) => {
-            cy.wrap($review).contains(Search_PO.searchKeyword, { matchCase: false });
+            cy.wrap($review).contains(searchKeyword, { matchCase: false });
         });
     }
 
     validateSearchNotFoundErr() {
         // Verify "No reviews found" message if no results match
-        cy.get('#search-input').type(Search_PO.nonSearchKeyword)
-        .type(`${Search_PO.nonSearchKeyword}{enter}`);
+        cy.get('#search-input').type(nonSearchKeyword)
+        .type(`${nonSearchKeyword}{enter}`);
         cy.get('.search-results__result-heading').should('be.visible')
     }
 
     validatePagination() {
         // Use the custom command for searching
-        cy.performSearch(Search_PO.searchKeyword);
+        cy.performSearch(searchKeyword);
 
         // Check that the "Next" button is visible
         cy.get('.pagination > :nth-child(3)').should('be.visible');
@@ -41,7 +40,7 @@ class Search_PO {
     }
 
     validateRateFilter() {
-        cy.performSearch(Search_PO.searchKeyword);
+        cy.performSearch(searchKeyword);
 
         // click on 2.5 star rating
         cy.get('.star-rating-chooser-wrapper > :nth-child(3)').click()
@@ -49,7 +48,7 @@ class Search_PO {
     }
 
     validateCurrencyFilter() {
-        cy.performSearch(Search_PO.searchKeyword);
+        cy.performSearch(searchKeyword);
 
         cy.get('.filter-sidebar__item-filter > .currency-dropdown > .currency-dropdown__wrapper > .currency-dropdown__select')
         .select('EUR')

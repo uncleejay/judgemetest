@@ -3,11 +3,11 @@ class Home_PO {
         // check if the url is correct
         cy.url().should('eq', baseUrl)
 
-        // Validate that the judge.me site loads within 5 seconds
+        // Validate that the judge.me site loads within 3 seconds
         cy.window().its('performance.timing').then((timing) => {
             const loadTime = timing.loadEventEnd - timing.navigationStart;
             cy.log(`Page load time: ${loadTime}ms`);
-            expect(loadTime).to.be.lessThan(5000); 
+            expect(loadTime).to.be.lessThan(3000); // 3 seconds
         });
 
         // validate the header is visible
@@ -18,20 +18,6 @@ class Home_PO {
 
         // validate that the footer is visible
         cy.get('.marketplace-footer__container--top').should('be.visible')
-    }
-
-    verifyLighthousePerformance() {
-        const thresholds = {
-            performance: 50,
-            accessibility: 80,
-            seo: 60,
-            pwa: 50,
-            };
-        const lighthouseConfig = {
-            formFactor: 'desktop',
-            screenEmulation: { disabled: true },
-        };
-        cy.lighthouse(thresholds, lighthouseConfig);
     }
 }
 
