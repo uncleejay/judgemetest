@@ -19,6 +19,20 @@ class Home_PO {
         // validate that the footer is visible
         cy.get('.marketplace-footer__container--top').should('be.visible')
     }
+
+    verifyLighthousePerformance() {
+        const thresholds = {
+            performance: 50,
+            accessibility: 80,
+            seo: 60,
+            pwa: 50,
+            };
+        const lighthouseConfig = {
+            formFactor: 'desktop',
+            screenEmulation: { disabled: true },
+        };
+        cy.lighthouse(thresholds, lighthouseConfig);
+    }
 }
 
 export default Home_PO;
