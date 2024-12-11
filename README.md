@@ -48,11 +48,11 @@ Before running the Cypress tests, ensure that your environment meets the followi
 
 ### PDF Test Cases
 
-All test cases are available in a PDF document located in the docs folder. This document provides a detailed breakdown of each test scenario.
+All test cases are available in a PDF document located in the docs/ folder. This document provides a detailed breakdown of each test scenario.
 
 ### Gherkin Test Cases
 
-Test cases written in Gherkin syntax are located in the docs folder. These scenarios are written in Cucumber for non-techies.
+Test cases written in Gherkin syntax are located in the docs/ folder. These scenarios are written in Cucumber for non-techies.
 
 ## Running Test Locally
 
