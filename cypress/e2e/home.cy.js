@@ -51,7 +51,7 @@ describe('Judge.Me Site', () => {
     it('should run lighthouse performance audit', () => {
         const thresholds = {
             performance: 50,
-            accessibility: 75,
+            accessibility: 80,
             seo: 60,
             pwa: 50,
             };
