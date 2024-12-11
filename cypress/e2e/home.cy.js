@@ -30,17 +30,17 @@ describe('Judge.Me Site E2E Test', () => {
 
     // Validate Pagination
     it('should allow navigation through pagination controls', () => {
-        search_po.validatePagination()
+        search_po.validatePagination();
     });
 
     // Validate Filtering by Rating
     it('should validate filter by rating a 2.5', () => {
-        search_po.validateRateFilter()
+        search_po.validateRateFilter();
     });
 
     // Validate currency filter
     it('should validate currency filter to select EUR', () => {
-        search_po.validateCurrencyFilter()
+        search_po.validateCurrencyFilter();
     })
 
     it('should have no accessibility violations', () => {
@@ -48,6 +48,6 @@ describe('Judge.Me Site E2E Test', () => {
     });
 
     it('should run lighthouse performance audit', () => {
-        home_po.verifyLighthousePerformance()
+        home_po.verifyLighthousePerformance();
     });
 });
